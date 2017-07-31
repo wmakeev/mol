@@ -1,0 +1,18 @@
+[mol_scroll] {
+	display: block;
+	overflow: auto;
+	flex: 1 1 auto;
+	box-sizing: border-box;
+	will-change: scroll-position;
+	transform: translateZ(0);
+	box-shadow: var(--mol_skin_light_outline);
+	max-height: 100%;
+	max-width: 100%;
+	-webkit-overflow-scrolling: touch;
+}
+
+@media print {
+	[mol_scroll] {
+		overflow: visible;
+	}
+}

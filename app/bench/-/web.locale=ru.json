@@ -1,0 +1,11 @@
+{
+	"$mol_select_no_options_message": "Нет вариантов",
+	"$mol_select_clear_option_message": "Стереть",
+	"$mol_select_filter_hint": "Фильтр..",
+	"$mol_search_hint": "Поиск..",
+	"$mol_bench_header_hint": "Щёлкните для сортировки по этой колонке",
+	"$mol_app_bench_addon_title": "Варианты реализаций",
+	"$mol_app_bench_result_column_title_sample": "Вариант",
+	"$mol_bench_head_hint": "Click to sort by this column",
+	"$mol_app_bench_result_col_title_sample": "Sample"
+}

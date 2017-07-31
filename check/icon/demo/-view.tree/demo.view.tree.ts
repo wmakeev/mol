@@ -1,0 +1,93 @@
+namespace $ { export class $mol_check_icon_demo extends $mol_row {
+
+	/// title @ \Iconic checkboxes in various states
+	title() {
+		return $mol_locale.text( this.locale_contexts() , "title" )
+	}
+
+	/// Base_icon $mol_icon_microphone
+	@ $mol_mem()
+	Base_icon() {
+		return (( obj )=>{
+			return obj
+		})( new $mol_icon_microphone )
+	}
+
+	/// base_checked?val false
+	@ $mol_mem()
+	base_checked( val? : any , force? : $mol_atom_force ) {
+		return ( val !== void 0 ) ? val : false
+	}
+
+	/// Base $mol_check_icon 
+	/// 	Icon <= Base_icon 
+	/// 	checked?val <=> base_checked?val
+	@ $mol_mem()
+	Base() {
+		return (( obj )=>{
+			obj.Icon = () => this.Base_icon()
+			obj.checked = ( val? : any ) => this.base_checked( val )
+			return obj
+		})( new $mol_check_icon )
+	}
+
+	/// Checked_icon $mol_icon_microphone
+	@ $mol_mem()
+	Checked_icon() {
+		return (( obj )=>{
+			return obj
+		})( new $mol_icon_microphone )
+	}
+
+	/// checked_checked?val true
+	@ $mol_mem()
+	checked_checked( val? : any , force? : $mol_atom_force ) {
+		return ( val !== void 0 ) ? val : true
+	}
+
+	/// Checked $mol_check_icon 
+	/// 	Icon <= Checked_icon 
+	/// 	checked?val <=> checked_checked?val
+	@ $mol_mem()
+	Checked() {
+		return (( obj )=>{
+			obj.Icon = () => this.Checked_icon()
+			obj.checked = ( val? : any ) => this.checked_checked( val )
+			return obj
+		})( new $mol_check_icon )
+	}
+
+	/// Disabled_icon $mol_icon_microphone
+	@ $mol_mem()
+	Disabled_icon() {
+		return (( obj )=>{
+			return obj
+		})( new $mol_icon_microphone )
+	}
+
+	/// Disabled $mol_check_box 
+	/// 	Icon <= Disabled_icon 
+	/// 	checked true 
+	/// 	enabled false
+	@ $mol_mem()
+	Disabled() {
+		return (( obj )=>{
+			obj.Icon = () => this.Disabled_icon()
+			obj.checked = () => true
+			obj.enabled = () => false
+			return obj
+		})( new $mol_check_box )
+	}
+
+	/// sub / 
+	/// 	<= Base 
+	/// 	- 
+	/// 	<= Checked 
+	/// 	- 
+	/// 	<= Disabled
+	sub() {
+		return [].concat( this.Base() , this.Checked() , this.Disabled() )
+	}
+
+} }
+
